@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>StatusNeo Insights | Data answers, engineered as a loop</title>
+  <meta name="description" content="StatusNeo Insights is one workspace to write queries, build dashboards, schedule alerts and govern access, powered by the AuthenticAI Loop.">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+  <link rel="stylesheet" href="/static/landing/landing.css">
+</head>
+<body class="sn-landing" data-base="{{ base }}">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="nav__bar">
+      <a class="brand" href="{{ base }}welcome" aria-label="StatusNeo Insights home">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M54 32A22 22 0 1 1 46.5 15.4" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          <path d="M38 8.5 L49 14.5 L42 25" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="32" r="6.5" fill="currentColor"/>
+        </svg>
+        <span class="brand__name">StatusNeo</span>
+        <span class="brand__sub">Insights</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#launch">Launch pad</a>
+        <a href="#principles">Principles</a>
+        <a href="#insights">Reading</a>
+        <button class="nav__mega-btn" type="button" aria-expanded="false" aria-controls="mega" data-mega-toggle>
+          StatusNeo
+          <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </nav>
+
+      <div class="nav__actions">
+        <a class="nav__signin" href="{{ base }}login">Sign in</a>
+        <a class="btn btn--solid" href="{{ base }}login" data-launch>Launch Insights</a>
+        <button class="nav__burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mega" data-mega-toggle>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mega" id="mega" hidden>
+      <div class="mega__grid">
+        <div class="mega__col mega__col--mobile-links">
+          <h2>This workspace</h2>
+          <ul>
+            <li><a href="#launch">Launch pad</a></li>
+            <li><a href="#principles">Principles</a></li>
+            <li><a href="#insights">Reading</a></li>
+            <li><a href="{{ base }}login">Sign in</a></li>
+          </ul>
+        </div>
+        <div class="mega__col">
+          <h2>Vision &amp; Leadership</h2>
+          <ul>
+            <li><a href="https://statusneo.com/our-story-mission/" target="_blank" rel="noopener">Our Story &amp; Mission</a></li>
+            <li><a href="https://statusneo.com/leadership-team/" target="_blank" rel="noopener">Leadership Team</a></li>
+            <li><a href="https://statusneo.com/life-at-statusneo/" target="_blank" rel="noopener">Life at StatusNeo</a></li>
+            <li><a href="https://statusneo.com/global-locations/" target="_blank" rel="noopener">Global Locations</a></li>
+          </ul>
+          <h2>Global Delivery &amp; GCCs</h2>
+          <ul>
+            <li><a href="https://statusneo.com/global-delivery-gccs/" target="_blank" rel="noopener">Global Delivery &amp; GCCs</a></li>
+            <li><a href="https://statusneo.com/gcc-setup-scale-services/" target="_blank" rel="noopener">GCC Setup &amp; Scale Services</a></li>
+          </ul>
+        </div>
+        <div class="mega__col">
+          <h2>AI-Native Enterprise</h2>
+          <ul>
+            <li><a href="https://statusneo.com/enterprise-os-fabric/" target="_blank" rel="noopener">Enterprise OS Fabric</a></li>
+            <li><a href="https://statusneo.com/authenticai-consulting/" target="_blank" rel="noopener">AuthenticAI™ Consulting</a></li>
+            <li><a href="https://decisionfabric.statusneo.com" target="_blank" rel="noopener">Decision Fabric</a></li>
+            <li><a href="https://statusneo.com/ai-native-sdlc-transformation/" target="_blank" rel="noopener">AI-Native SDLC Transformation</a></li>
+            <li><a href="https://statusneo.com/agentic-engineering-workflows/" target="_blank" rel="noopener">Agentic Engineering Workflows</a></li>
+            <li><a href="https://statusneo.com/ai-in-ci-cd-devsecops-qa/" target="_blank" rel="noopener">AI in CI/CD, DevSecOps, QA</a></li>
+            <li><a href="https://statusneo.com/ai-devx-aiops/" target="_blank" rel="noopener">AI DevX &amp; AIOps</a></li>
+            <li><a href="https://statusneo.com/ai-maturity-index-scan/" target="_blank" rel="noopener">AI Maturity Index Scan</a></li>
+            <li><a href="https://statusneo.com/ai-periodic-table/" target="_blank" rel="noopener">Periodic Table</a></li>
+          </ul>
+        </div>
+        <div class="mega__col">
+          <h2>Offerings</h2>
+          <ul>
+            <li><a href="https://statusneo.com/experience-interface-design/" target="_blank" rel="noopener">Experience &amp; Interface Design</a></li>
+            <li><a href="https://statusneo.com/product-management-strategy/" target="_blank" rel="noopener">Product Management &amp; Strategy</a></li>
+            <li><a href="https://statusneo.com/ai-product-design/" target="_blank" rel="noopener">AI Product Design</a></li>
+            <li><a href="https://statusneo.com/product-engineering/" target="_blank" rel="noopener">Product Engineering</a></li>
+            <li><a href="https://statusneo.com/data-ai-engineering/" target="_blank" rel="noopener">Data &amp; AI Engineering</a></li>
+            <li><a href="https://statusneo.com/platform-automation-engineering/" target="_blank" rel="noopener">Platform Automation Engineering</a></li>
+            <li><a href="https://statusneo.com/devsecops-sre-cloudops/" target="_blank" rel="noopener">DevSecOps, SRE &amp; CloudOps</a></li>
+            <li><a href="https://statusneo.com/test-engineering-automation/" target="_blank" rel="noopener">Test Engineering &amp; Automation</a></li>
+            <li><a href="https://statusneo.com/ai-engineering-governance/" target="_blank" rel="noopener">AI &amp; Engineering Governance</a></li>
+            <li><a href="https://statusneo.com/compliance-security-risk/" target="_blank" rel="noopener">Compliance, Security &amp; Risk</a></li>
+            <li><a href="https://statusneo.com/observability-maturity-index/" target="_blank" rel="noopener">Observability &amp; Maturity Index</a></li>
+          </ul>
+        </div>
+        <div class="mega__col">
+          <h2>Accelerators &amp; IP</h2>
+          <ul>
+            <li><a href="https://testcraft.statusneo.com/" target="_blank" rel="noopener">TestCraft</a></li>
+            <li><a href="http://querybutler.ai/" target="_blank" rel="noopener">QueryButler</a></li>
+            <li><a href="https://statusneo.com/backstage/" target="_blank" rel="noopener">Backstage.io By StatusNeo</a></li>
+          </ul>
+          <h2>Insights &amp; Community</h2>
+          <ul>
+            <li><a href="https://statusneo.com/partnerships-alliances/" target="_blank" rel="noopener">Partnerships &amp; Alliances</a></li>
+            <li><a href="https://statusneo.com/glean-enterprise-ai/" target="_blank" rel="noopener">Glean Enterprise AI</a></li>
+            <li><a href="https://statusneo.com/blogs" target="_blank" rel="noopener">Blogs</a></li>
+            <li><a href="https://statusneo.com/events/" target="_blank" rel="noopener">Events</a></li>
+            <li><a href="https://statusneo.com/whitepaper/" target="_blank" rel="noopener">Whitepaper</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mega__foot">
+        <a href="https://statusneo.com/" target="_blank" rel="noopener">Visit statusneo.com</a>
+        <a href="https://statusneo.com/offering/" target="_blank" rel="noopener">All offerings</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__grid" aria-hidden="true"></div>
+
+      <div class="hero__copy">
+        <h1 id="hero-title">Your data, run as a loop.</h1>
+        <p class="hero__lead">
+          StatusNeo Insights is where your team writes the query, charts the answer, schedules the refresh
+          and decides who gets to see it. One workspace for every turn of the AuthenticAI™ Loop.
+          No hype. No shortcuts.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--solid btn--lg" href="{{ base }}login" data-launch>Launch Insights</a>
+          <a class="btn btn--ghost btn--lg" href="https://statusneo.com/authenticai-consulting/" target="_blank" rel="noopener">Explore AuthenticAI™</a>
+        </div>
+        <p class="hero__note">
+          New here? The first sign-in walks you through setup.
+          Already have an account? <a href="{{ base }}login">Sign in</a>.
+        </p>
+      </div>
+
+      <div class="loop" id="loop" data-loop>
+        <div class="loop__stage">
+          <svg class="loop__svg" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+            <defs>
+              <radialGradient id="loopGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffd60a" stop-opacity="0.16"/>
+                <stop offset="70%" stop-color="#ffd60a" stop-opacity="0.04"/>
+                <stop offset="100%" stop-color="#ffd60a" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="200" cy="200" r="198" fill="url(#loopGlow)"/>
+            <g class="loop__ticks" data-ticks></g>
+            <circle class="loop__ring" cx="200" cy="200" r="160"/>
+            <circle class="loop__ring loop__ring--inner" cx="200" cy="200" r="150"/>
+            <circle class="loop__tail" cx="200" cy="200" r="160" data-tail/>
+            <circle class="loop__head" r="6" data-head cx="200" cy="40"/>
+            <g class="loop__arrows" data-arrows></g>
+          </svg>
+
+          <button class="loop__node loop__node--1 is-active" type="button" data-phase="0" aria-pressed="true">
+            <span class="loop__num">1</span><span class="loop__label">Design</span>
+          </button>
+          <button class="loop__node loop__node--2" type="button" data-phase="1" aria-pressed="false">
+            <span class="loop__num">2</span><span class="loop__label">Engineer</span>
+          </button>
+          <button class="loop__node loop__node--3" type="button" data-phase="2" aria-pressed="false">
+            <span class="loop__num">3</span><span class="loop__label">Automate</span>
+          </button>
+          <button class="loop__node loop__node--4" type="button" data-phase="3" aria-pressed="false">
+            <span class="loop__num">4</span><span class="loop__label">Govern</span>
+          </button>
+        </div>
+
+        <div class="console" data-console aria-live="polite">
+          <div class="console__bar">
+            <span class="console__dot"></span>
+            <span class="console__title" data-console-title>Design</span>
+            <span class="console__hint" data-console-hint>Shape the question</span>
+        </div>
+          <div class="console__body" data-console-body></div>
+          <a class="console__open" data-console-open href="{{ base }}queries/new">Open in Insights</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LAUNCH PAD ================= -->
+    <section class="section launch" id="launch" aria-labelledby="launch-title">
+      <div class="section__head">
+        <h2 id="launch-title">Pick up the loop where you are.</h2>
+        <p>Every phase maps to a real page in the workspace. Jump straight in; you&rsquo;ll sign in first if you haven&rsquo;t already.</p>
+      </div>
+
+      <ol class="phases">
+        <li class="phase">
+          <div class="phase__num" aria-hidden="true">1</div>
+          <div class="phase__body">
+            <h3>Design</h3>
+            <p class="phase__tag">Shape the question.</p>
+            <p>Write SQL in an editor that knows your schema. Parameters and snippets keep every query reusable by the next person.</p>
+          </div>
+          <ul class="phase__links">
+            <li><a href="{{ base }}queries/new">New query</a></li>
+            <li><a href="{{ base }}queries">All queries</a></li>
+            <li><a href="{{ base }}queries/my">My queries</a></li>
+            <li><a href="{{ base }}query_snippets">Query snippets</a></li>
+          </ul>
+        </li>
+        <li class="phase">
+          <div class="phase__num" aria-hidden="true">2</div>
+          <div class="phase__body">
+            <h3>Engineer</h3>
+            <p class="phase__tag">Build the answer.</p>
+            <p>Turn results into charts, pivots, maps and counters, then compose them into dashboards your whole team can open.</p>
+          </div>
+          <ul class="phase__links">
+            <li><a href="{{ base }}dashboards">Dashboards</a></li>
+            <li><a href="{{ base }}dashboards/favorites">Favorite dashboards</a></li>
+            <li><a href="{{ base }}queries/favorites">Favorite queries</a></li>
+          </ul>
+        </li>
+        <li class="phase">
+          <div class="phase__num" aria-hidden="true">3</div>
+          <div class="phase__body">
+            <h3>Automate</h3>
+            <p class="phase__tag">Keep it fresh.</p>
+            <p>Schedule refreshes and set alerts that notify the right channel the moment a number crosses the line.</p>
+          </div>
+          <ul class="phase__links">
+            <li><a href="{{ base }}alerts">Alerts</a></li>
+            <li><a href="{{ base }}alerts/new">New alert</a></li>
+            <li><a href="{{ base }}destinations">Alert destinations</a></li>
+          </ul>
+        </li>
+        <li class="phase">
+          <div class="phase__num" aria-hidden="true">4</div>
+          <div class="phase__body">
+            <h3>Govern</h3>
+            <p class="phase__tag">Control who sees what.</p>
+            <p>Connect data sources, organise people into groups and decide which groups may query which source.</p>
+          </div>
+          <ul class="phase__links">
+            <li><a href="{{ base }}data_sources">Data sources</a></li>
+            <li><a href="{{ base }}groups">Groups</a></li>
+            <li><a href="{{ base }}users">Users</a></li>
+            <li><a href="{{ base }}settings/general">Settings</a></li>
+            <li><a href="{{ base }}admin/status">System status</a></li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= PRINCIPLES ================= -->
+    <section class="section principles" id="principles" aria-labelledby="principles-title">
+      <div class="principles__intro">
+        <h2 id="principles-title">The same principles run through every query.</h2>
+        <p>
+          StatusNeo created the AuthenticAI™ philosophy: AI and data work that is honest about what it is.
+          Insights is built to that standard, so the numbers you ship can be traced, questioned and trusted.
+        </p>
+        <a class="textlink" href="https://statusneo.com/the-manifesto/" target="_blank" rel="noopener">Read the AuthenticAI™ Loop Manifesto</a>
+      </div>
+      <ul class="principles__list">
+        <li><strong>Engineered,</strong> not assembled.</li>
+        <li><strong>Responsible,</strong> not reckless.</li>
+        <li><strong>Business-driven,</strong> not demo-driven.</li>
+        <li><strong>Loop-powered,</strong> not project-bound.</li>
+        <li><strong>Observable, governed, ethical,</strong> and true.</li>
+      </ul>
+    </section>
+
+    <!-- ================= READING ================= -->
+    <section class="section reading" id="insights" aria-labelledby="reading-title">
+      <div class="section__head">
+        <h2 id="reading-title">Ideas shaping the future of enterprise engineering.</h2>
+        <p>Recent writing from the StatusNeo team.</p>
+      </div>
+      <ul class="posts">
+        <li>
+          <a class="post" href="https://statusneo.com/surprising-ways-to-master-llm-observability-a-practical-guide/" target="_blank" rel="noopener">
+            <span class="post__title">Surprising Ways to Master LLM Observability: A Practical Guide</span>
+            <span class="post__meta">Arka Nath Roy &middot; September 11, 2026 &middot; 15 min read</span>
+          </a>
+        </li>
+        <li>
+          <a class="post" href="https://statusneo.com/authentic-ai-why-the-future-belongs-to-systems-that-tell-the-truth-about-themselves/" target="_blank" rel="noopener">
+            <span class="post__title">Authentic AI: Why the Future Belongs to Systems That Tell the Truth About Themselves</span>
+            <span class="post__meta">Aviral Dwivedi &middot; July 24, 2026 &middot; 7 min read</span>
+          </a>
+        </li>
+        <li>
+          <a class="post" href="https://statusneo.com/the-new-sdlc-how-software-development-changes-when-ai-joins-the-team/" target="_blank" rel="noopener">
+            <span class="post__title">The New SDLC: How Software Development Changes When AI Joins the Team</span>
+            <span class="post__meta">Aviral Dwivedi &middot; July 22, 2026 &middot; 7 min read</span>
+          </a>
+        </li>
+        <li>
+          <a class="post" href="https://statusneo.com/the-gcc-of-the-future-from-offshore-execution-to-enterprise-transformation/" target="_blank" rel="noopener">
+            <span class="post__title">The GCC of the Future: From Offshore Execution to Enterprise Transformation</span>
+            <span class="post__meta">Aviral Dwivedi &middot; December 19, 2025 &middot; 6 min read</span>
+          </a>
+        </li>
+      </ul>
+      <a class="textlink" href="https://statusneo.com/blogs" target="_blank" rel="noopener">Explore all insights</a>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta" aria-labelledby="cta-title">
+      <h2 id="cta-title">Ready to build something authentic?</h2>
+      <div class="cta__actions">
+        <a class="btn btn--solid btn--lg" href="{{ base }}login" data-launch>Launch Insights</a>
+        <a class="btn btn--ghost btn--lg" href="https://statusneo.com/contact/" target="_blank" rel="noopener">Start your AI-native transformation</a>
+        <a class="btn btn--ghost btn--lg" href="https://statusneo.com/gcc-setup-scale-services/" target="_blank" rel="noopener">Build your GCC</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <a class="brand" href="https://statusneo.com/" target="_blank" rel="noopener" aria-label="StatusNeo website">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M54 32A22 22 0 1 1 46.5 15.4" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+            <path d="M38 8.5 L49 14.5 L42 25" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="32" r="6.5" fill="currentColor"/>
+          </svg>
+          <span class="brand__name">StatusNeo</span>
+        </a>
+        <p>Engineering authentic, AI-native transformation through a continuous loop uniting Design, Engineering, Automation, and Governance, enabling enterprises to move with speed, precision, and truth.</p>
+        <ul class="foot__social">
+          <li><a href="https://www.linkedin.com/company/statusneo" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@StatusNeoInc" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Quick links</h2>
+        <ul>
+          <li><a href="https://statusneo.com/our-story-mission/" target="_blank" rel="noopener">About</a></li>
+          <li><a href="https://statusneo.com/ai-native-sdlc-transformation/" target="_blank" rel="noopener">AI-Native</a></li>
+          <li><a href="https://statusneo.com/events" target="_blank" rel="noopener">Events</a></li>
+          <li><a href="https://statusneo.com/contact" target="_blank" rel="noopener">Contact</a></li>
+          <li><a href="https://statusneo.com/authenticai-consulting" target="_blank" rel="noopener">AuthenticAI™ by StatusNeo</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Global redirect</h2>
+        <address>
+          <strong>StatusNeo Inc.</strong><br>
+          539 W. Commerce St #2228<br>
+          Dallas, TX 75208<br>
+          USA
+        </address>
+        <a class="textlink" href="https://statusneo.com/global-locations/" target="_blank" rel="noopener">See all locations</a>
+      </div>
+
+      <div>
+        <h2>Work inquiries</h2>
+        <p>Interested in working with us?</p>
+        <a class="textlink" href="https://statusneo.com/contact/" target="_blank" rel="noopener">Contact StatusNeo</a>
+        <h2 class="foot__h-gap">Career</h2>
+        <p>Looking for a job opportunity?</p>
+        <a class="textlink" href="https://statusneo.zohorecruit.in/" target="_blank" rel="noopener">See open positions</a>
+      </div>
+    </div>
+
+    <div class="foot__legal">
+      <p>
+        &copy; 2020&ndash;2026
+        <a href="https://statusneo.com/" target="_blank" rel="noopener">StatusNeo Technology Consulting Pvt. Ltd. &amp; its Global Affiliates including StatusNeo Inc.</a>
+        All rights reserved.
+      </p>
+      <p>
+        <a href="https://statusneo.com/privacy-policy" target="_blank" rel="noopener">Privacy &amp; Cookie Policy</a>
+        <span aria-hidden="true">|</span>
+        <a href="https://statusneo.com/term-of-use/" target="_blank" rel="noopener">Terms of Service</a>
+      </p>
+      <p class="foot__oss">The Insights workspace is built on open-source Redash (BSD-2-Clause).</p>
+    </div>
+  </footer>
+
+  <script src="/static/landing/landing.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+# StatusNeo Insights: production-style stack used by ./run.sh
+# (the repo's compose.yaml is a developer setup that skips the frontend build).
+x-app: &app
+  build:
+    context: .
+    args:
+      skip_frontend_build: ""   # empty => the Docker image builds the UI (incl. the StatusNeo theme)
+  restart: unless-stopped
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_started
+  environment: &app-env
+    PYTHONUNBUFFERED: "0"
+    REDASH_LOG_LEVEL: "INFO"
+    REDASH_HOST: "${REDASH_HOST:-http://localhost:5000}"
+    REDASH_REDIS_URL: "redis://redis:6379/0"
+    REDASH_DATABASE_URL: "postgresql://postgres:${POSTGRES_PASSWORD}@postgres/postgres"
+    REDASH_COOKIE_SECRET: "${REDASH_COOKIE_SECRET}"
+    REDASH_SECRET_KEY: "${REDASH_SECRET_KEY}"
+    REDASH_WEB_WORKERS: "${REDASH_WEB_WORKERS:-4}"
+    WORKERS_COUNT: "${WORKERS_COUNT:-2}"
+
+services:
+  server:
+    <<: *app
+    command: server
+    ports:
+      - "${STATUSNEO_PORT:-5000}:5000"
+  scheduler:
+    <<: *app
+    command: scheduler
+  worker:
+    <<: *app
+    command: worker
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - statusneo-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  statusneo-pgdata:

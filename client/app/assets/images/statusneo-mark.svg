@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="StatusNeo">
+  <path d="M54 32A22 22 0 1 1 46.5 15.4" fill="none" stroke="#FFD60A" stroke-width="6" stroke-linecap="round"/>
+  <path d="M38 8.5 L49 14.5 L42 25" fill="none" stroke="#FFD60A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="32" r="6.5" fill="#FFD60A"/>
+</svg>

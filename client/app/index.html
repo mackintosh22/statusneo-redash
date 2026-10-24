@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+  <head>
+    <style>html,body{background:#000}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <script src="<%= htmlWebpackPlugin.options.staticPath %>unsupportedRedirect.js" async></script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="<%= htmlWebpackPlugin.options.staticPath %>images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="<%= htmlWebpackPlugin.options.staticPath %>images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="<%= htmlWebpackPlugin.options.staticPath %>images/favicon-16x16.png"
+    />
+  </head>
+
+  <body>
+    <section>
+      <div id="application-root"></div>
+      <div class="loading-indicator">
+        <div class="sn-loader" role="status" aria-label="Loading">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <g class="sn-loader-ring">
+              <path d="M54 32A22 22 0 1 1 46.5 15.4" fill="none" stroke="#ffd60a" stroke-width="6" stroke-linecap="round" />
+              <path d="M38 8.5 L49 14.5 L42 25" fill="none" stroke="#ffd60a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+            <circle class="sn-loader-dot" cx="32" cy="32" r="6.5" fill="#ffd60a" />
+          </svg>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
